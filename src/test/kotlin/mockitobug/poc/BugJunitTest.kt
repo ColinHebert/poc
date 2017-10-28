@@ -1,5 +1,5 @@
 package mockitobug.poc
-
+/*
 import org.junit.Test
 import org.mockito.Mockito
 
@@ -20,3 +20,4 @@ class BugJunitTest {
         assertEquals(2, (1 + 0).toLong())
     }
 }
+*/
