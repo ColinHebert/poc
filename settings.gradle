@@ -1,0 +1,17 @@
+// Workaround because junit-platform-gradle-plugin isn't in the gradle plugin portal
+// See https://github.com/junit-team/junit5/issues/768#issuecomment-330078905
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url = ArtifactRepositoryContainer.MAVEN_CENTRAL_URL }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "org.junit.platform.gradle.plugin") {
+                useModule("org.junit.platform:junit-platform-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+
+rootProject.name = 'poc'
